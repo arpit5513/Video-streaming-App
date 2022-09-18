@@ -1,0 +1,546 @@
+Screen_Manager:
+    Screen_Welcome:
+    Screen_Home:
+    Screen_LiveStreaming:
+    Screen_VideoPlayer:
+    Screen_YouTubePlayer:
+    Screen_ChatRoom:
+
+<Screen_Welcome>:
+    name:"Welcome"
+    MDCard:
+        size_hint: .9,.9
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        border_radius: 20
+        radius: [15]
+        
+        MDCard:
+            size_hint: .9,.5
+            pos_hint: {"center_x": 0.5 ,"center_y": 0.6}
+            elevation: 10
+            padding: 25
+            spacing: 25
+            orientation: 'vertical'
+            border_radius: 20
+            radius: [15]
+
+            Image:
+                source: "logo.jpeg"
+                allow_stretch: True
+                size_hint: .9,.9
+                pos_hint: {"center_x": 0.5 }
+
+            MDLabel:
+                id: Welcome_label
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "Welcome Sup!"
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'center'
+                font_size: 40
+                padding_y: 15
+            MDLabel:
+                id: Welcome_Tag
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "This is Streamer "
+                bold: True
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'center'
+                font_size: 20
+                padding_y: 15
+                            
+            MDLabel:
+                id: Welcome_Tag
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "Your New Streaming Platform"
+                bold: True
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'center'
+                font_size: 20
+                padding_y: 15
+            
+
+            MDTextFieldRound:
+                id: user_name
+                hint_text: "Name"
+                icon_right: "human-child"
+                theme_text_color: 'Custom'
+                text_color:(2/255, 23/255, 12/255,1)
+                size_hint_x: None
+                width: 200
+                font_size: 18
+                pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+                spacing: 20   
+            MDTextFieldRound:
+                id: user_mail
+                hint_text: "Email Id"
+                icon_right: "email"
+                theme_text_color: 'Custom'
+                text_color:(2/255, 23/255, 12/255,1)
+                size_hint_x: None
+                width: 200
+                font_size: 18
+                pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+                spacing: 20   
+            MDTextFieldRound:
+                id: user_date
+                hint_text: "Date of Birth"
+                icon_right: "calender"
+                theme_text_color: 'Custom'
+                text_color:(2/255, 23/255, 12/255,1)
+                size_hint_x: None
+                width: 200
+                font_size: 18
+                pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+                spacing: 20   
+            MDTextFieldRound:
+                id: user_password
+                hint_text: "Password"
+                icon_right: "key"
+                password: True
+                theme_text_color: 'Custom'
+                text_color:(2/255, 23/255, 12/255,1)
+                size_hint_x: None
+                width: 200
+                font_size: 18
+                pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+                spacing: 20   
+            
+            MDRoundFlatButton:
+                text:"   LOG IN   "
+                font_size: 21
+                bold: True 
+                pos_hint:{'center_x': .5}
+                on_press: 
+                    app.root.current = "Home"
+                    root.manager.transition.direction = 'up'
+    
+            MDRoundFlatButton:
+                text:"   Sign Up   "
+                font_size: 21
+                bold: True 
+                pos_hint:{'center_x': .5}
+                on_press: 
+                    app.root.current = "Home"
+                    root.manager.transition.direction = 'up'
+
+<Screen_Home>:
+    name: "Home"
+    MDCard:
+        size_hint: 1,.2
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.9}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+    
+    MDCard:
+        size_hint: .9,.1
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.9}
+        elevation: 30
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        border_radius: 20
+        radius: [15]
+
+    MDCard:
+        size_hint: .9,.1
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.9}
+        elevation: 30
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        border_radius: 20
+        radius: [15]
+        GridLayout:
+            cols: 2
+
+            MDLabel:
+                id: Welcome_Tag
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "STEAMER MENU"
+                bold: True
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'left'
+                font_size: 30
+                padding_x: 15
+
+            MDIconButton:
+            # name of mdicon
+                icon: 'account'
+                md_bg_color: app.theme_cls.primary_dark
+                padding:15
+                spacing:15
+                font_size: 40 
+                pos_hint:{'center_x': .5,'center_y': .06}
+                on_press: 
+                    app.root.current = "LiveStream"
+                    root.manager.transition.direction = 'up'
+
+
+    Video:
+        id: Video
+        source: "vid.mkv"
+        size_hint: .8,.5
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.65}
+        state:'play'
+        volume: 0
+        options:{'eos': 'stop'}
+        allow_stretch: True
+    MDIconButton:
+    # name of mdicon
+        icon: 'arrow-right-drop-circle'
+        md_bg_color: app.theme_cls.primary_dark
+        padding:15
+        spacing:15
+        font_size: 20 
+        pos_hint:{'center_x': .9,'center_y': .65}
+        on_press: 
+            app.backward()
+    MDIconButton:
+    # name of mdicon
+        icon: 'arrow-left-drop-circle'
+        md_bg_color: app.theme_cls.primary_dark
+        padding:15
+        spacing:15
+        font_size: 20 
+        pos_hint:{'center_x': .1,'center_y': .65}
+        on_press: 
+            app.forward()
+
+    MDCard:
+        size_hint: .3,.15
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.2 ,"center_y": 0.3}
+        elevation: 30
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        border_radius: 20
+        radius: [15]
+
+        GridLayout:
+            cols: 2
+
+            MDLabel:
+                id: Welcome_Tag
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "Live Streaming"
+                bold: True
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'center'
+                font_size: 20
+                padding_y: 15
+
+            MDIconButton:
+            # name of mdicon
+                icon: 'access-point'
+                md_bg_color: app.theme_cls.primary_dark
+                padding:15
+                spacing:15
+                font_size: 40 
+                pos_hint:{'center_x': .5,'center_y': .06}
+                on_press: 
+                    app.root.current = "LiveStream"
+                    root.manager.transition.direction = 'up'
+
+
+    MDCard:
+        size_hint: .3,.15
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.8 ,"center_y": 0.3}
+        elevation: 30
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        border_radius: 20
+        radius: [15]
+
+        GridLayout:
+            cols: 2
+
+            MDLabel:
+                id: Welcome_Tag2
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "Video Player"
+                bold: True
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'center'
+                font_size: 20
+                padding_y: 15
+
+            MDIconButton:
+            # name of mdicon
+                icon: 'play'
+                md_bg_color: app.theme_cls.primary_dark
+                padding:15
+                spacing:15
+                font_size: 40 
+                pos_hint:{'center_x': .5,'center_y': .06}
+                on_press: 
+                    app.root.current = "VideoPlayer"
+                    root.manager.transition.direction = 'left'
+
+
+    MDCard:
+        size_hint: .3,.15
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.2 ,"center_y": 0.1}
+        elevation: 30
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        border_radius: 20
+        radius: [15]
+
+        GridLayout:
+            cols: 2
+
+            MDLabel:
+                id: Welcome_Tag3
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "Youtube Player"
+                bold: True
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'center'
+                font_size: 20
+                padding_y: 15
+
+            MDIconButton:
+            # name of mdicon
+                icon: 'youtube'
+                md_bg_color: app.theme_cls.primary_dark
+                padding:15
+                spacing:15
+                font_size: 40 
+                pos_hint:{'center_x': .5,'center_y': .06}
+                on_press: 
+                    app.root.current = "YoutubePlayer"
+                    root.manager.transition.direction = 'right'
+
+
+    MDCard:
+        size_hint: .3,.15
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.8 ,"center_y": 0.1}
+        elevation: 30
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        border_radius: 20
+        radius: [15]
+
+        GridLayout:
+            cols: 2
+
+            MDLabel:
+                id: Welcome_Tag4
+                theme_text_color: 'Custom'
+                text_color: app.theme_cls.accent_color
+                #text_color:(8/255, 156/255, 77/255,1) 
+                text: "Live ChatRoom"
+                bold: True
+                #pos_hint: {"center_x": 0.67 ,"center_y": 0.5}
+                halign: 'center'
+                font_size: 20
+                padding_y: 15
+
+            MDIconButton:
+            # name of mdicon
+                icon: 'chat'
+                md_bg_color: app.theme_cls.primary_dark
+                padding:15
+                spacing:15
+                font_size: 40 
+                pos_hint:{'center_x': .5,'center_y': .06}
+                on_press: 
+                    app.root.current = "ChatRoom"
+                    root.manager.transition.direction = 'right'
+
+<Screen_LiveStreaming>:
+    name: 'LiveStream'
+
+    Image:
+        id: Live
+        source: "download.png"
+        allow_stretch: True
+        size_hint: .5,.5
+        pos_hint:{'center_x': .5,'center_y': .5}
+
+    MDRoundFlatButton:
+        text:"Go Live"
+        font_size: 21
+        bold: True 
+        spacing: 20
+        pos_hint:{'center_x': .5,'center_y': .1}
+        on_press: 
+            app.LiveStream()
+    
+    MDIconButton:
+        icon:'home'
+        on_press: app.root.current= "Home"
+            root.manager.transition.direction = 'left'
+        pos_hint: {"center_x":.9,"center_y":.9}
+        md_bg_color: app.theme_cls.primary_dark
+
+<Screen_VideoPlayer>:
+    name: 'VideoPlayer'
+
+    MDTextFieldRound:
+        id: Video_path
+        hint_text: "File_Name"
+        theme_text_color: 'Custom'
+        text_color:(2/255, 23/255, 12/255,1)
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {"center_x": 0.5,"center_y":.9}
+        spacing: 20   
+    
+    MDRoundFlatButton:
+        text:"Play"
+        font_size: 21
+        bold: True 
+        spacing: 20
+        pos_hint:{'center_x': .5,"center_y":.8}
+        on_press: 
+            app.VideoPlay()
+    
+    VideoPlayer:
+        id: Video
+        size_hint: .8,.6
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.4}
+        state:'play'
+        options:{'eos': 'stop'}
+        allow_stretch: True
+    
+    MDIconButton:
+        icon:'home'
+        on_press: app.root.current= "Home"
+            root.manager.transition.direction = 'left'
+        pos_hint: {"center_x":.5,"center_y":.04}
+        md_bg_color: app.theme_cls.primary_dark
+        
+<Screen_YouTubePlayer>:
+
+    name: 'YoutubePlayer'
+
+    MDTextFieldRound:
+        id: url
+        hint_text: "Video Url"
+        theme_text_color: 'Custom'
+        text_color:(2/255, 23/255, 12/255,1)
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {"center_x": 0.5,"center_y":.9}
+        spacing: 20   
+    
+    MDRoundFlatButton:
+        text:"Play"
+        font_size: 21
+        bold: True 
+        spacing: 20
+        pos_hint:{'center_x': .5,"center_y":.8}
+        on_press: 
+            app.YouTubePlay()
+    
+    VideoPlayer:
+        id: Video
+        size_hint: .8,.6
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.4}
+        state:'play'
+        options:{'eos': 'stop'}
+        allow_stretch: True
+    
+    MDIconButton:
+        icon:'home'
+        on_press: app.root.current= "Home"
+            root.manager.transition.direction = 'left'
+        pos_hint: {"center_x":.5,"center_y":.05}
+        md_bg_color: app.theme_cls.primary_dark
+
+<Screen_ChatRoom>:
+    name: 'ChatRoom'
+    
+    MDLabel:
+        id: Responce
+        theme_text_color: 'Custom'
+        text_color: app.theme_cls.accent_color
+        #text_color:(8/255, 156/255, 77/255,1) 
+        bold: True
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+        halign: 'center'
+        font_size: 20
+        padding_y: 15
+    
+    MDLabel:
+        id: Responce_My
+        theme_text_color: 'Custom'
+        text_color: app.theme_cls.accent_color
+        #text_color:(8/255, 156/255, 77/255,1) 
+        bold: True
+        pos_hint: {"center_x": 0.5,"center_y": 0.4}
+        halign: 'center'
+        font_size: 20
+        padding_y: 15
+    MDTextFieldRound:
+        id: message
+        hint_text: "Enter Your Name"
+        theme_text_color: 'Custom'
+        text_color:(2/255, 23/255, 12/255,1)
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {"center_x": 0.5,"center_y":.6}
+        spacing: 20   
+    
+    MDRoundFlatButton:
+        text:"Send"
+        font_size: 21
+        bold: True 
+        spacing: 20
+        pos_hint:{'center_x': .5,"center_y":.7}
+        on_press: 
+            app.ChatRooms()
+   
+
+    MDIconButton:
+        icon:'home'
+        on_press: app.root.current= "Home"
+            root.manager.transition.direction = 'left'
+        pos_hint: {"center_x":.5,"center_y":.1}
+        md_bg_color: app.theme_cls.primary_dark
+
+
+    
+
+
+
+
+
+
+
+        
